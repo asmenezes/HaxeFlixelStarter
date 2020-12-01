@@ -6,7 +6,7 @@ import flixel.FlxObject;
 
 class Player extends FlxSprite
 {
-  var up:Bool = false;
+var up:Bool = false;
 var down:Bool = false;
 var left:Bool = false;
 var right:Bool = false;
