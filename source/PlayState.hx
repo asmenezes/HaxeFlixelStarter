@@ -6,6 +6,7 @@ import flixel.tile.FlxTilemap;
 import entities.Player;
 import objects.Square;
 import objects.Diamond;
+import entities.Enemy;
 import flixel.group.FlxGroup;
 import flixel.FlxObject;
 import flixel.math.FlxPoint;
@@ -16,6 +17,7 @@ class PlayState extends FlxState
   var bullets:FlxTypedGroup<Square>;
     var diamonds:FlxTypedGroup<Diamond>;
   var itemMap:FlxTilemap;
+  var enem:Enemy;
     override public function create():Void
     {
 
@@ -34,10 +36,12 @@ class PlayState extends FlxState
         add(diamonds);
         //Add one to all CSV numbers and add a blank initial tile
         map.loadMapFromCSV("assets/data/map.csv","assets/images/TileSheet.png");
+
         map.screenCenter();
         //Set the bounds of the world to the size of the map..... SUPER IMPORTANT
         FlxG.worldBounds.set(map.x, map.y, map.width, map.height);
-
+        enem = new Enemy(200,100);
+        add(enem);
         //Create the Player
     player = new Player(90,90);
     //add player to the level
@@ -51,6 +55,10 @@ class PlayState extends FlxState
     }
     function hitBullet(map:FlxTilemap,bullet:Square):Void{
       bullets.remove(bullet,true);
+    }
+    function hitEnemy(enemy:Enemy,bullet:Square):Void{
+      bullets.remove(bullet,true);
+      enemy.hurt(1);
     }
     function shoot(){
       if(FlxG.keys.justPressed.SPACE){
@@ -73,6 +81,8 @@ class PlayState extends FlxState
     FlxG.collide(map,diamonds);
     FlxG.collide(player,diamonds,collectDiamond);
     FlxG.collide(map,bullets,hitBullet);
+    FlxG.collide(enem,bullets,hitEnemy);
+    FlxG.collide(map,enem);
     shoot();
         super.update(elapsed);
 
