@@ -3,9 +3,11 @@ package entities;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.tile.FlxTilemap;
 
 class Enemy extends FlxSprite
 {
+  var SPEED: Int = 200;
 
     public function new(x:Float = 0,y:Float = 0){
       //Have to call super first
@@ -24,6 +26,7 @@ class Enemy extends FlxSprite
       offset.set(20,30);
       //400 gravity
       acceleration.y = 900;
+      velocity.x = 300;
       //set max velocities
       maxVelocity.x = maxVelocity.y = 300;
       // Set drag
@@ -31,18 +34,31 @@ class Enemy extends FlxSprite
       //elasticity == bounciness, 1 is full bounce
       //elasticity = .1;
       //set health to five
-      health = 3;
+      health = 13;
       }
       //movement function
       function move(elapsed:Float){
 
+        animation.play("walk");
+        velocity.x = SPEED;
+
+
       }
-      public function turn(){
-        //turn around code
+    public function turn(enemy:Enemy,map:FlxTilemap){
+      if(justTouched(FlxObject.WALL)){
+
+          trace( "Turning Enemy" );
+        SPEED *= -1;
+        if(facing == FlxObject.RIGHT){
+          facing = FlxObject.LEFT;
+        }else{
+          facing = FlxObject.RIGHT;
+        }}
       }
     override public function update(elapsed:Float):Void{
-      //call the movement function to move
+
       move(elapsed);
+
         super.update(elapsed);
 
 

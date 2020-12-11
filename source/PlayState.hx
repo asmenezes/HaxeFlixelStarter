@@ -40,7 +40,7 @@ class PlayState extends FlxState
         map.screenCenter();
         //Set the bounds of the world to the size of the map..... SUPER IMPORTANT
         FlxG.worldBounds.set(map.x, map.y, map.width, map.height);
-        enem = new Enemy(200,100);
+        enem = new Enemy(300,100);
         add(enem);
         //Create the Player
     player = new Player(90,90);
@@ -81,8 +81,8 @@ class PlayState extends FlxState
     FlxG.collide(map,diamonds);
     FlxG.collide(player,diamonds,collectDiamond);
     FlxG.collide(map,bullets,hitBullet);
+    FlxG.collide(map,enem,enem.turn);
     FlxG.collide(enem,bullets,hitEnemy);
-    FlxG.collide(map,enem);
     shoot();
         super.update(elapsed);
 
