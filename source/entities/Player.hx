@@ -6,10 +6,12 @@ import flixel.FlxObject;
 
 class Player extends FlxSprite
 {
+final SPEED:Int = 300;
 var up:Bool = false;
 var down:Bool = false;
 var left:Bool = false;
 var right:Bool = false;
+
     public function new(x:Float = 0,y:Float = 0){
       //Have to call super first
       super(x,y);
@@ -26,11 +28,11 @@ var right:Bool = false;
       setSize(55,66);
       offset.set(20,30);
       //400 gravity
-      acceleration.y = 900;
+      acceleration.y = Main.GRAVITY;
       //set max velocities
       maxVelocity.x = maxVelocity.y = 300;
       // Set drag
-      drag.x = drag.y = 2600;
+      drag.x = drag.y = Main.DRAG;
       //elasticity == bounciness, 1 is full bounce
       //elasticity = .1;
       }
@@ -54,12 +56,12 @@ var right:Bool = false;
           velocity.y = -1570;
         }
         if(right){
-          velocity.x = 300;
+          velocity.x = SPEED;
           animation.play("walk");
           facing = FlxObject.RIGHT;
 
         }else if (left){
-          velocity.x = -300;
+          velocity.x = -SPEED;
           animation.play("walk");
           facing = FlxObject.LEFT;
         }else{

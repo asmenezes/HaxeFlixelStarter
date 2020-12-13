@@ -8,7 +8,7 @@ import flixel.tile.FlxTilemap;
 class Enemy extends FlxSprite
 {
   var SPEED: Int = 200;
-
+  final MAXVELOCITY: Int = 300;
     public function new(x:Float = 0,y:Float = 0){
       //Have to call super first
       super(x,y);
@@ -25,15 +25,15 @@ class Enemy extends FlxSprite
       setSize(55,66);
       offset.set(20,30);
       //400 gravity
-      acceleration.y = 900;
-      velocity.x = 300;
+      acceleration.y = Main.GRAVITY;
+
       //set max velocities
-      maxVelocity.x = maxVelocity.y = 300;
+      maxVelocity.x = maxVelocity.y = MAXVELOCITY;
       // Set drag
-      drag.x = drag.y = 2600;
+      drag.x = drag.y = Main.DRAG;
       //elasticity == bounciness, 1 is full bounce
       //elasticity = .1;
-      //set health to five
+      //set health to 13
       health = 13;
       }
       //movement function
@@ -47,7 +47,7 @@ class Enemy extends FlxSprite
     public function turn(enemy:Enemy,map:FlxTilemap){
       if(justTouched(FlxObject.WALL)){
 
-          trace( "Turning Enemy" );
+          //trace( "Turning Enemy" );
         SPEED *= -1;
         if(facing == FlxObject.RIGHT){
           facing = FlxObject.LEFT;

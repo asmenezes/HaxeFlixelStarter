@@ -6,6 +6,7 @@ import flixel.tile.FlxTilemap;
 import entities.Player;
 import objects.Square;
 import objects.Diamond;
+import objects.Door;
 import entities.Enemy;
 import flixel.group.FlxGroup;
 import flixel.FlxObject;
@@ -15,9 +16,10 @@ class PlayState extends FlxState
   var map:FlxTilemap;
   var player:Player;
   var bullets:FlxTypedGroup<Square>;
-    var diamonds:FlxTypedGroup<Diamond>;
+  var diamonds:FlxTypedGroup<Diamond>;
   var itemMap:FlxTilemap;
   var enem:Enemy;
+  var door:Door;
     override public function create():Void
     {
 
@@ -34,6 +36,10 @@ class PlayState extends FlxState
           addDiamond(dia);
         }
         add(diamonds);
+        //adds the first door to the map
+        var doorLocation:Array<FlxPoint> = itemMap.getTileCoords(2);
+        door = new Door(doorLocation[0].x,doorLocation[0].y);
+        add(door);
         //Add one to all CSV numbers and add a blank initial tile
         map.loadMapFromCSV("assets/data/map.csv","assets/images/TileSheet.png");
 
@@ -75,14 +81,22 @@ class PlayState extends FlxState
       Main.gems++;
       trace( Main.gems );
     }
+    function checkPass(player:Player,door:Door){
+      //go to new level but check first
+      trace("Go to new level");
+
+    }
     override public function update(elapsed:Float):Void
     {
+
     FlxG.collide(map,player);
     FlxG.collide(map,diamonds);
     FlxG.collide(player,diamonds,collectDiamond);
     FlxG.collide(map,bullets,hitBullet);
     FlxG.collide(map,enem,enem.turn);
     FlxG.collide(enem,bullets,hitEnemy);
+    FlxG.collide(player,door,checkPass);
+    FlxG.collide(map,door);
     shoot();
         super.update(elapsed);
 
