@@ -43,3 +43,13 @@ Physics and other
 Saving?
 
 When to use the float?
+
+
+
+Enemy State
+  Default - Move forward and play the walking animation (If close to player go to notice, if hit go to hit)
+  Hit - If hit stop and play hit animation, jump back a bit, then resume Default or if dead go to death
+  Notice - Play notice animation then go to Alert
+  Alert - If within a certain distance of player walk toward the player(If extra close go to attack if leave distance resume default)
+  Attack - if super close to player do attack animation
+  Death - Play death animation, then remove the enemy

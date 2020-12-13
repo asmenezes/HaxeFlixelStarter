@@ -4,11 +4,16 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.tile.FlxTilemap;
+import FSM;
 
 class Enemy extends FlxSprite
 {
   var SPEED: Int = 200;
+  var timer: Float = 0;
   final MAXVELOCITY: Int = 300;
+  var control :FSM;
+  public var hitByBullet:Bool = false;
+
     public function new(x:Float = 0,y:Float = 0){
       //Have to call super first
       super(x,y);
@@ -20,7 +25,9 @@ class Enemy extends FlxSprite
 
       //name of anim, frames to play, loops?, flip x?, flip y?
       animation.add("walk",[1,2,3,4,5,6],5,true,false);
-      animation.play("walk");
+      //create the FSM
+      control = new FSM();
+      control.pushState(defaultState);
       //set the bounding box size 45 * 66, offset 30
       setSize(55,66);
       offset.set(20,30);
@@ -37,27 +44,42 @@ class Enemy extends FlxSprite
       health = 13;
       }
       //movement function
-      function move(elapsed:Float){
+      function defaultState(){
 
         animation.play("walk");
         velocity.x = SPEED;
+        if(hitByBullet){
+          //control.popState();
+          //push the hit state
+        //  control.pushState();
+          hitByBullet = false;
+          hurt(2);
+          trace("Totally Got hit");
+        }
+        else if(justTouched(FlxObject.WALL)){
+        //  trace("Turn should get pushed");
+          control.popState();
+          control.pushState(turn);
 
+        }
 
       }
-    public function turn(enemy:Enemy,map:FlxTilemap){
-      if(justTouched(FlxObject.WALL)){
-
+    function turn(){
           //trace( "Turning Enemy" );
         SPEED *= -1;
         if(facing == FlxObject.RIGHT){
           facing = FlxObject.LEFT;
         }else{
           facing = FlxObject.RIGHT;
-        }}
+        }
+        control.popState();
+        control.pushState(defaultState);
+
       }
+
     override public function update(elapsed:Float):Void{
 
-      move(elapsed);
+      control.update();
 
         super.update(elapsed);
 

@@ -64,8 +64,8 @@ class PlayState extends FlxState
     }
     function hitEnemy(enemy:Enemy,bullet:Square):Void{
       bullets.remove(bullet,true);
-      enemy.hurt(1);
-    }
+      enemy.hitByBullet = true;
+      }
     function shoot(){
       if(FlxG.keys.justPressed.SPACE){
         bullets.add(new Square(player.x,player.y,player.facing == FlxObject.RIGHT));
@@ -93,8 +93,8 @@ class PlayState extends FlxState
     FlxG.collide(map,diamonds);
     FlxG.collide(player,diamonds,collectDiamond);
     FlxG.collide(map,bullets,hitBullet);
-    FlxG.collide(map,enem,enem.turn);
     FlxG.collide(enem,bullets,hitEnemy);
+    FlxG.collide(map,enem);
     FlxG.collide(player,door,checkPass);
     FlxG.collide(map,door);
     shoot();
