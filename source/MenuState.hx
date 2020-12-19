@@ -16,7 +16,6 @@ class MenuState extends FlxState{
         super.update(elapsed);
     }
     function clickPlay(){
-      Main.gems += 3;
     FlxG.switchState(new PlayState());
 }
 }

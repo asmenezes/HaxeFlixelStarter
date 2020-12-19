@@ -2,7 +2,7 @@ package;
 
 import flixel.FlxGame;
 import openfl.display.Sprite;
-
+import flixel.FlxG;
 class Main extends Sprite
 {
 	//Game Variables not related to any state or object.

@@ -25,6 +25,7 @@ class Enemy extends FlxSprite
 
       //name of anim, frames to play, loops?, flip x?, flip y?
       animation.add("walk",[1,2,3,4,5,6],5,true,false);
+      animation.add("hit",[2],6,false,false);
       //create the FSM
       control = new FSM();
       control.pushState(defaultState);
@@ -49,12 +50,10 @@ class Enemy extends FlxSprite
         animation.play("walk");
         velocity.x = SPEED;
         if(hitByBullet){
-          //control.popState();
+          control.popState();
           //push the hit state
-        //  control.pushState();
-          hitByBullet = false;
-          hurt(2);
-          trace("Totally Got hit");
+          control.pushState(hit);
+
         }
         else if(justTouched(FlxObject.WALL)){
         //  trace("Turn should get pushed");
@@ -75,6 +74,23 @@ class Enemy extends FlxSprite
         control.popState();
         control.pushState(defaultState);
 
+      }
+      function hit(){
+        if(hitByBullet){
+          hurt(2);
+          trace("Totally Got hit");
+        }
+        hitByBullet = false;
+        if(!animation.finished){
+          animation.play("hit");
+          if(isTouching(FlxObject.DOWN)){
+          velocity.y = -20;
+        }
+        }else{
+
+        control.popState();
+        control.pushState(defaultState);
+      }
       }
 
     override public function update(elapsed:Float):Void{
