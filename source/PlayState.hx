@@ -70,8 +70,6 @@ class PlayState extends FlxState
       if(FlxG.keys.justPressed.SPACE){
         bullets.add(new Square(player.x,player.y,player.facing == FlxObject.RIGHT));
       }
-
-
     }
     function addDiamond(location:FlxPoint){
       diamonds.add(new Diamond(location.x,location.y));

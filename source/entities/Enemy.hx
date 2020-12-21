@@ -4,6 +4,9 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.tile.FlxTilemap;
+import flixel.graphics.FlxGraphic;
+import flixel.graphics.atlas.FlxAtlas;
+import flixel.graphics.frames.FlxAtlasFrames;
 import FSM;
 
 class Enemy extends FlxSprite
@@ -18,20 +21,28 @@ class Enemy extends FlxSprite
       //Have to call super first
       super(x,y);
       //Load the sprite sheet
-      loadGraphic("assets/images/Monster_Walk.png",true,95,95);
+      //loadGraphic("assets/images/Monster_Walk.png",true,95,95);
+
+      //Attempt to get an atlas
+
+      var atlasFrames = FlxAtlasFrames.fromTexturePackerJson("assets/images/EnemySheet1.png","assets/images/EnemySheet1.json");
+      //var atlas = FlxGraphic.fromFrames(atlasFrames,false);
+      //loadGraphic(atlas,true);
+      frames = atlasFrames;
       //make the sprite flippable
       setFacingFlip(FlxObject.LEFT,true,false);
       setFacingFlip(FlxObject.RIGHT,false,false);
 
-      //name of anim, frames to play, loops?, flip x?, flip y?
-      animation.add("walk",[1,2,3,4,5,6],5,true,false);
-      animation.add("hit",[2],6,false,false);
+      //name of anim, Prefix in atlas, nums to play, Postfix in atlas, loops?, flip x?, flip y?
+      animation.addByIndices("walk","Walk",[1,2,3,4,5,6],"",10,true,false);
+      animation.addByIndices("hit","Hit",[1,2,3,4],"",15,false,false);
+      animation.addByIndices("attack","Attack",[1,2,3,4],"",10,false,false);
       //create the FSM
       control = new FSM();
       control.pushState(defaultState);
       //set the bounding box size 45 * 66, offset 30
-      setSize(55,66);
-      offset.set(20,30);
+      //setSize(55,66);
+      //offset.set(20,30);
       //400 gravity
       acceleration.y = Main.GRAVITY;
 
