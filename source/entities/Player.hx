@@ -11,10 +11,13 @@ var up:Bool = false;
 var down:Bool = false;
 var left:Bool = false;
 var right:Bool = false;
+  var ps:PlayState;
 
-    public function new(x:Float = 0,y:Float = 0){
+    public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
       //Have to call super first
       super(x,y);
+      //get playstate access
+      ps = pstate;
       //Load the sprite sheet
       loadGraphic("assets/images/CharSheet.png",true,96,96);
       //make the sprite flippable

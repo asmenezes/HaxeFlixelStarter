@@ -13,13 +13,13 @@ import flixel.FlxObject;
 import flixel.math.FlxPoint;
 class PlayState extends FlxState
 {
-  var map:FlxTilemap;
-  var player:Player;
-  var bullets:FlxTypedGroup<Square>;
-  var diamonds:FlxTypedGroup<Diamond>;
-  var itemMap:FlxTilemap;
-  var enem:Enemy;
-  var door:Door;
+  public var map:FlxTilemap;
+  public var player:Player;
+  public var bullets:FlxTypedGroup<Square>;
+  public var diamonds:FlxTypedGroup<Diamond>;
+  public var itemMap:FlxTilemap;
+  public var enems:FlxTypedGroup<Enemy>;
+  public var door:Door;
     override public function create():Void
     {
 
@@ -46,10 +46,13 @@ class PlayState extends FlxState
         map.screenCenter();
         //Set the bounds of the world to the size of the map..... SUPER IMPORTANT
         FlxG.worldBounds.set(map.x, map.y, map.width, map.height);
-        enem = new Enemy(300,100);
-        add(enem);
+        //enemy stuff
+        enems = new FlxTypedGroup<Enemy>();
+        var enem = new Enemy(300,100,this);
+        enems.add(enem);
+        add(enems);
         //Create the Player
-    player = new Player(90,90);
+    player = new Player(90,90,this);
     //add player to the level
       add(player);
       bullets = new FlxTypedGroup<Square>(50);
@@ -62,10 +65,10 @@ class PlayState extends FlxState
     function hitBullet(map:FlxTilemap,bullet:Square):Void{
       bullets.remove(bullet,true);
     }
-    function hitEnemy(enemy:Enemy,bullet:Square):Void{
-      bullets.remove(bullet,true);
-      enemy.hitByBullet = true;
-      }
+    // function hitEnemy(enemy:Enemy,bullet:Square):Void{
+    //   bullets.remove(bullet,true);
+    //   enemy.hitByBullet = true;
+    //   }
     function shoot(){
       if(FlxG.keys.justPressed.SPACE){
         bullets.add(new Square(player.x,player.y,player.facing == FlxObject.RIGHT));
@@ -84,6 +87,7 @@ class PlayState extends FlxState
       trace("Go to new level");
 
     }
+
     override public function update(elapsed:Float):Void
     {
 
@@ -91,11 +95,10 @@ class PlayState extends FlxState
     FlxG.collide(map,diamonds);
     FlxG.collide(player,diamonds,collectDiamond);
     FlxG.collide(map,bullets,hitBullet);
-    FlxG.collide(enem,bullets,hitEnemy);
-    FlxG.collide(map,enem);
     FlxG.collide(player,door,checkPass);
     FlxG.collide(map,door);
     shoot();
+
         super.update(elapsed);
 
 

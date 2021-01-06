@@ -1,6 +1,7 @@
 package entities;
 
 import flixel.FlxSprite;
+import objects.Square;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.tile.FlxTilemap;
@@ -15,11 +16,13 @@ class Enemy extends FlxSprite
   var timer: Float = 0;
   final MAXVELOCITY: Int = 300;
   var control :FSM;
+  var ps:PlayState;
   public var hitByBullet:Bool = false;
 
-    public function new(x:Float = 0,y:Float = 0){
+    public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
       //Have to call super first
       super(x,y);
+      ps = pstate;
       //Load the sprite sheet
       //loadGraphic("assets/images/Monster_Walk.png",true,95,95);
 
@@ -103,9 +106,16 @@ class Enemy extends FlxSprite
         control.pushState(defaultState);
       }
       }
+      function hitEnemy(enemy:Enemy,bullet:Square):Void{
+        ps.bullets.remove(bullet,true);
+        hitByBullet = true;
+        }
+
+
 
     override public function update(elapsed:Float):Void{
-
+      FlxG.collide(this,ps.bullets,hitEnemy);
+      FlxG.collide(ps.map,this);
       control.update();
 
         super.update(elapsed);
