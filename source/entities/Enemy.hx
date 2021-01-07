@@ -17,6 +17,7 @@ class Enemy extends FlxSprite
   final MAXVELOCITY: Int = 300;
   var control :FSM;
   var ps:PlayState;
+  public var damage:Int;
   public var hitByBullet:Bool = false;
 
     public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
@@ -48,7 +49,7 @@ class Enemy extends FlxSprite
       //offset.set(20,30);
       //400 gravity
       acceleration.y = Main.GRAVITY;
-
+      damage = 1;
       //set max velocities
       maxVelocity.x = maxVelocity.y = MAXVELOCITY;
       // Set drag

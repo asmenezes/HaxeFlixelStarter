@@ -3,7 +3,7 @@ package entities;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.FlxObject;
-
+import objects.Square;
 class Player extends FlxSprite
 {
 final SPEED:Int = 300;
@@ -11,7 +11,7 @@ var up:Bool = false;
 var down:Bool = false;
 var left:Bool = false;
 var right:Bool = false;
-  var ps:PlayState;
+var ps:PlayState;
 
     public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
       //Have to call super first
@@ -72,9 +72,22 @@ var right:Bool = false;
           animation.play("idle");
         }
       }
+      function shoot(){
+        if(FlxG.keys.justPressed.SPACE){
+          ps.bullets.add(new Square(x,y,facing == FlxObject.RIGHT,ps));
+        }
+      }
+      function collectDiamond(player:Player,diamond){
+        ps.diamonds.remove(diamond,true);
+        Main.gems++;
+        trace( Main.gems );
+      }
     override public function update(elapsed:Float):Void{
       //call the movement function to move
+          FlxG.collide(ps.map,this);
+          FlxG.collide(this,ps.diamonds,collectDiamond);
       move(elapsed);
+      shoot();
         super.update(elapsed);
 
 

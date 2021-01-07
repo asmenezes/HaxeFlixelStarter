@@ -6,9 +6,11 @@ import flixel.FlxG;
 //^^^ use this funtion to create an array with the coordinates of all of a type of tile, use that for adding diamonds to the map
 class Diamond extends FlxSprite
 {
-  public function new(x:Float,y:Float)
+  var ps:PlayState;
+  public function new(x:Float,y:Float,pState:PlayState)
   {
       super(x,y);
+      ps = pState;
       loadGraphic("assets/images/Diamond.png");
       velocity.y=200;
 
@@ -16,6 +18,7 @@ class Diamond extends FlxSprite
 
     override public function update(elapsed:Float):Void
     {
+          FlxG.collide(ps.map,this);
         super.update(elapsed);
     }
 }

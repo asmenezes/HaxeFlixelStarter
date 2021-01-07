@@ -38,7 +38,7 @@ class PlayState extends FlxState
         add(diamonds);
         //adds the first door to the map
         var doorLocation:Array<FlxPoint> = itemMap.getTileCoords(2);
-        door = new Door(doorLocation[0].x,doorLocation[0].y);
+        door = new Door(doorLocation[0].x,doorLocation[0].y,this);
         add(door);
         //Add one to all CSV numbers and add a blank initial tile
         map.loadMapFromCSV("assets/data/map.csv","assets/images/TileSheet.png");
@@ -62,26 +62,11 @@ class PlayState extends FlxState
         add(map);
         super.create();
     }
-    function hitBullet(map:FlxTilemap,bullet:Square):Void{
-      bullets.remove(bullet,true);
-    }
-    // function hitEnemy(enemy:Enemy,bullet:Square):Void{
-    //   bullets.remove(bullet,true);
-    //   enemy.hitByBullet = true;
-    //   }
-    function shoot(){
-      if(FlxG.keys.justPressed.SPACE){
-        bullets.add(new Square(player.x,player.y,player.facing == FlxObject.RIGHT));
-      }
-    }
+
     function addDiamond(location:FlxPoint){
-      diamonds.add(new Diamond(location.x,location.y));
+      diamonds.add(new Diamond(location.x,location.y,this));
     }
-    function collectDiamond(player:Player,diamond:Diamond){
-      diamonds.remove(diamond,true);
-      Main.gems++;
-      trace( Main.gems );
-    }
+
     function checkPass(player:Player,door:Door){
       //go to new level but check first
       trace("Go to new level");
@@ -90,15 +75,7 @@ class PlayState extends FlxState
 
     override public function update(elapsed:Float):Void
     {
-
-    FlxG.collide(map,player);
-    FlxG.collide(map,diamonds);
-    FlxG.collide(player,diamonds,collectDiamond);
-    FlxG.collide(map,bullets,hitBullet);
-    FlxG.collide(player,door,checkPass);
-    FlxG.collide(map,door);
-    shoot();
-
+        FlxG.collide(player,door,checkPass);
         super.update(elapsed);
 
 

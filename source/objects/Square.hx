@@ -5,19 +5,24 @@ import flixel.FlxG;
 
 class Square extends FlxSprite
 {
-
-
+public var damage:Int;
+var ps: PlayState;
   //add a direction to constructor
-    public function new(x:Float,y:Float,right:Bool)
+    public function new(x:Float,y:Float,right:Bool,pState:PlayState)
     {
+      ps = pState;
+      damage = 2;
         super(x,y);
         loadGraphic("assets/images/Square.png");
         velocity.y=20;
         velocity.x = if (right) 900 else -900;
     }
-
+    function hitMap(map,bullet:Square):Void{
+      ps.bullets.remove(bullet,true);
+    }
     override public function update(elapsed:Float):Void
     {
+      FlxG.collide(ps.map,this,hitMap);
         super.update(elapsed);
     }
 }
