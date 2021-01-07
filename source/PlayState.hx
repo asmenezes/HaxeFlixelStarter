@@ -67,17 +67,30 @@ class PlayState extends FlxState
       diamonds.add(new Diamond(location.x,location.y,this));
     }
 
-    function checkPass(player:Player,door:Door){
+    function checkPass(){
       //go to new level but check first
+              if(FlxG.collide(player,door)){
       trace("Go to new level");
-
+      FlxG.resetState();
+    }else if(player.health <= 0){
+      trace("You lose");
+      FlxG.resetState();
     }
 
+    }
+    function addItems(){
+
+    }
+    function addEnemies(){
+
+    }
+function addMap(){
+
+}
     override public function update(elapsed:Float):Void
     {
-        FlxG.collide(player,door,checkPass);
+  
+      checkPass();
         super.update(elapsed);
-
-
     }
 }

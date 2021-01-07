@@ -30,6 +30,8 @@ var ps:PlayState;
       //set the bounding box size 45 * 66, offset 30
       setSize(55,66);
       offset.set(20,30);
+      //set the health
+      health = 5;
       //400 gravity
       acceleration.y = Main.GRAVITY;
       //set max velocities

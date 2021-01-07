@@ -112,11 +112,17 @@ class Enemy extends FlxSprite
         hitByBullet = true;
         }
 
+      function hitPlayer(enemy:Enemy,player):Void{
+        ps.player.hurt(.25);
+
+        }
 
 
     override public function update(elapsed:Float):Void{
       FlxG.collide(this,ps.bullets,hitEnemy);
       FlxG.collide(ps.map,this);
+      //abstractify player hit and bullet hit
+      FlxG.collide(this,ps.player,hitPlayer);
       control.update();
 
         super.update(elapsed);
