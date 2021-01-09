@@ -1,8 +1,10 @@
 /*
-pass in maps
+map and tiles
 player location
 enemies maps
 item maps
-goal state?
+goal state
+background images
+sounds
 
 */

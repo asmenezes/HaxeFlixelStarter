@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxState;
+import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.tile.FlxTilemap;
 import entities.Player;
@@ -11,6 +12,7 @@ import entities.Enemy;
 import flixel.group.FlxGroup;
 import flixel.FlxObject;
 import flixel.math.FlxPoint;
+import flixel.FlxSprite;
 class PlayState extends FlxState
 {
   public var map:FlxTilemap;
@@ -22,7 +24,11 @@ class PlayState extends FlxState
   public var door:Door;
     override public function create():Void
     {
-
+      //Background image
+      var background:FlxSprite = new FlxSprite(0,0,"assets/images/backgroundEmpty.png");
+      background.screenCenter();
+      background.scrollFactor.set(.8,.8);
+      add(background);
       //Create the Map
         map = new FlxTilemap();
         //create the Item Map
@@ -58,7 +64,10 @@ class PlayState extends FlxState
       bullets = new FlxTypedGroup<Square>(50);
       add(bullets);
       //make the camera follow the player
+      FlxG.camera.bgColor = FlxColor.fromString("#96d5e8");
       FlxG.camera.follow(player,PLATFORMER,1);
+      
+
         add(map);
         super.create();
     }
@@ -89,7 +98,7 @@ function addMap(){
 }
     override public function update(elapsed:Float):Void
     {
-  
+
       checkPass();
         super.update(elapsed);
     }
