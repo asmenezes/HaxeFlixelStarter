@@ -2,6 +2,7 @@ package entities;
 
 import flixel.FlxSprite;
 import flixel.FlxG;
+import flixel.system.FlxSound;
 import flixel.FlxObject;
 import objects.Square;
 class Player extends FlxSprite
@@ -12,6 +13,8 @@ var down:Bool = false;
 var left:Bool = false;
 var right:Bool = false;
 var ps:PlayState;
+var sSound: FlxSound;
+var cSound: FlxSound;
 
     public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
       //Have to call super first
@@ -20,6 +23,10 @@ var ps:PlayState;
       ps = pstate;
       //Load the sprite sheet
       loadGraphic("assets/images/CharSheet.png",true,96,96);
+      //shooty sound
+      sSound = FlxG.sound.load("assets/sounds/shoot.wav");
+      //Collection Sound
+      cSound = FlxG.sound.load("assets/sounds/pickup.wav");
       //make the sprite flippable
       setFacingFlip(FlxObject.LEFT,true,false);
       setFacingFlip(FlxObject.RIGHT,false,false);
@@ -76,10 +83,12 @@ var ps:PlayState;
       }
       function shoot(){
         if(FlxG.keys.justPressed.SPACE){
+          sSound.play();
           ps.bullets.add(new Square(x,y,facing == FlxObject.RIGHT,ps));
         }
       }
       function collectDiamond(player:Player,diamond){
+        cSound.play();
         ps.diamonds.remove(diamond,true);
         Main.gems++;
         trace( Main.gems );

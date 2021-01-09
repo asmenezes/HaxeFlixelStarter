@@ -94,7 +94,10 @@ null
 #if flash
 
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_shoot_wav extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_pickup_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_select_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_map2_tmx extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_platformpack_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_mapitems_csv extends null { }
