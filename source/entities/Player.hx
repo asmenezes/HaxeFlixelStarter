@@ -86,8 +86,8 @@ var ps:PlayState;
       }
     override public function update(elapsed:Float):Void{
       //call the movement function to move
-          FlxG.collide(ps.map,this);
-          FlxG.collide(this,ps.diamonds,collectDiamond);
+      FlxG.collide(ps.map,this);
+      FlxG.collide(this,ps.diamonds,collectDiamond);
       move(elapsed);
       shoot();
         super.update(elapsed);
