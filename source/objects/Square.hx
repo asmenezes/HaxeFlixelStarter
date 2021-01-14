@@ -2,13 +2,13 @@ package objects;
 
 import flixel.FlxSprite;
 import flixel.FlxG;
-
+import states.BaseState;
 class Square extends FlxSprite
 {
 public var damage:Int;
-var ps: PlayState;
+var ps: BaseState;
   //add a direction to constructor
-    public function new(x:Float,y:Float,right:Bool,pState:PlayState)
+    public function new(x:Float,y:Float,right:Bool,pState:BaseState)
     {
       ps = pState;
       damage = 2;

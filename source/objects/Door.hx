@@ -2,25 +2,23 @@ package objects;
 
 import flixel.FlxSprite;
 import flixel.FlxG;
-
-class Door extends FlxSprite
+import states.BaseState;
+class Door extends Item
 {
-  var ps:PlayState;
-  public function new(x:Float,y:Float,pState:PlayState)
+
+  public function new(x:Float,y:Float,pState:BaseState)
   {
 
-      super(x,y);
-      ps = pState;
+      super(x,y,pState);
       loadGraphic("assets/images/GreenDoor.png");
-
-
   }
   public function collision(){
 
   }
     override public function update(elapsed:Float):Void
     {
-      FlxG.collide(ps.map,this);
+      FlxG.collide(bs.map,this);
+      FlxG.overlap(bs.player,this,bs.checkPass);
         super.update(elapsed);
     }
 }

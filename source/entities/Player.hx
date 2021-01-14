@@ -1,26 +1,26 @@
 package entities;
 
+import entities.Entity;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.system.FlxSound;
 import flixel.FlxObject;
 import objects.Square;
-class Player extends FlxSprite
+import states.BaseState;
+class Player extends Entity
 {
-final SPEED:Int = 300;
-var up:Bool = false;
-var down:Bool = false;
-var left:Bool = false;
-var right:Bool = false;
-var ps:PlayState;
+
 var sSound: FlxSound;
+
 var cSound: FlxSound;
 
-    public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
+    public function new(x:Float = 0,y:Float = 0,pstate:BaseState){
       //Have to call super first
-      super(x,y);
+      super(x,y,pstate);
+
       //get playstate access
-      ps = pstate;
+      //set speed
+      SPEED=300;
       //Load the sprite sheet
       loadGraphic("assets/images/CharSheet.png",true,96,96);
       //shooty sound
@@ -84,19 +84,20 @@ var cSound: FlxSound;
       function shoot(){
         if(FlxG.keys.justPressed.SPACE){
           sSound.play();
-          ps.bullets.add(new Square(x,y,facing == FlxObject.RIGHT,ps));
+          bs.bullets.add(new Square(x,y,facing == FlxObject.RIGHT,bs));
         }
       }
-      function collectDiamond(player:Player,diamond){
-        cSound.play();
-        ps.diamonds.remove(diamond,true);
-        Main.gems++;
-        trace( Main.gems );
+      function collectItem(player:Player,item){
+        item.use();
+        // cSound.play();
+        // bs.items.remove(item,true);
+        // Main.gems++;
+        // trace( Main.gems );
       }
     override public function update(elapsed:Float):Void{
       //call the movement function to move
-      FlxG.collide(ps.map,this);
-      FlxG.collide(this,ps.diamonds,collectDiamond);
+      FlxG.collide(bs.map,this);
+      FlxG.overlap(this,bs.items,collectItem);
       move(elapsed);
       shoot();
         super.update(elapsed);

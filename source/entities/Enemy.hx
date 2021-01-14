@@ -9,21 +9,19 @@ import flixel.graphics.FlxGraphic;
 import flixel.graphics.atlas.FlxAtlas;
 import flixel.graphics.frames.FlxAtlasFrames;
 import FSM;
-
-class Enemy extends FlxSprite
+import states.BaseState;
+class Enemy extends Entity
 {
-  var SPEED: Int = 200;
   var timer: Float = 0;
   final MAXVELOCITY: Int = 300;
   var control :FSM;
-  var ps:PlayState;
   public var damage:Int;
   public var hitByBullet:Bool = false;
 
-    public function new(x:Float = 0,y:Float = 0,pstate:PlayState){
+    public function new(x:Float = 0,y:Float = 0,pstate:BaseState){
       //Have to call super first
-      super(x,y);
-      ps = pstate;
+      super(x,y,pstate);
+
       //Load the sprite sheet
       //loadGraphic("assets/images/Monster_Walk.png",true,95,95);
 
@@ -108,21 +106,21 @@ class Enemy extends FlxSprite
       }
       }
       function hitEnemy(enemy:Enemy,bullet:Square):Void{
-        ps.bullets.remove(bullet,true);
+        bs.bullets.remove(bullet,true);
         hitByBullet = true;
         }
 
       function hitPlayer(enemy:Enemy,player):Void{
-        ps.player.hurt(.25);
+        bs.player.hurt(.25);
 
         }
 
 
     override public function update(elapsed:Float):Void{
-      FlxG.collide(this,ps.bullets,hitEnemy);
-      FlxG.collide(ps.map,this);
+      FlxG.collide(this,bs.bullets,hitEnemy);
+      FlxG.collide(bs.map,this);
       //abstractify player hit and bullet hit
-      FlxG.collide(this,ps.player,hitPlayer);
+      FlxG.collide(this,bs.player,hitPlayer);
       control.update();
 
         super.update(elapsed);

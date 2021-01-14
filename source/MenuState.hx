@@ -18,6 +18,6 @@ class MenuState extends FlxState{
         super.update(elapsed);
     }
     function clickPlay(){
-    FlxG.switchState(new PlayState());
+    FlxG.switchState(new PlayState2());
 }
 }
