@@ -84,19 +84,26 @@ var cSound: FlxSound;
       }
       function collectItem(player:Player,item){
         item.use();
-        // cSound.play();
-        // bs.items.remove(item,true);
-        // Main.gems++;
-        // trace( Main.gems );
       }
     override public function update(elapsed:Float):Void{
       //call the movement function to move
       FlxG.collide(bs.map,this);
       FlxG.overlap(this,bs.items,collectItem);
-      defaultState();
       shoot();
+      controller.update();
         super.update(elapsed);
 
 
     }
 }
+/*
+Side to side movement state is default
+-if not touching floor then in jumping state
+-if moving then and shoot do movingshoot state
+
+jumping state
+-if touching floor then go to default state 
+
+
+
+*/

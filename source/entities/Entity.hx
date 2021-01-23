@@ -37,7 +37,7 @@ class Entity extends FlxSprite{
   override public function update(elapsed:Float):Void{
           FlxG.collide(bs.map,this);
           super.update(elapsed);
-  }
+            }
   public function defaultState():Void{
     //override this funciton
   }

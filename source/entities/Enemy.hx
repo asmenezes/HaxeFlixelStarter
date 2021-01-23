@@ -111,7 +111,7 @@ class Enemy extends Entity
       FlxG.collide(this,bs.player,hitPlayer);
       controller.update();
 
-        super.update(elapsed);
+      super.update(elapsed);
 
 
     }
