@@ -13,23 +13,16 @@ import states.BaseState;
 class Enemy extends Entity
 {
   var timer: Float = 0;
-  final MAXVELOCITY: Int = 300;
-  var control :FSM;
   public var damage:Int;
   public var hitByBullet:Bool = false;
 
     public function new(x:Float = 0,y:Float = 0,pstate:BaseState){
       //Have to call super first
       super(x,y,pstate);
-
-      //Load the sprite sheet
-      //loadGraphic("assets/images/Monster_Walk.png",true,95,95);
-
       //Attempt to get an atlas
 
       var atlasFrames = FlxAtlasFrames.fromTexturePackerJson("assets/images/EnemySheet1.png","assets/images/EnemySheet1.json");
-      //var atlas = FlxGraphic.fromFrames(atlasFrames,false);
-      //loadGraphic(atlas,true);
+
       frames = atlasFrames;
       //make the sprite flippable
       setFacingFlip(FlxObject.LEFT,true,false);
@@ -40,38 +33,32 @@ class Enemy extends Entity
       animation.addByIndices("hit","Hit",[1,2,3,4],"",15,false,false);
       animation.addByIndices("attack","Attack",[1,2,3,4],"",10,false,false);
       //create the FSM
-      control = new FSM();
-      control.pushState(defaultState);
+
       //set the bounding box size 45 * 66, offset 30
       //setSize(55,66);
       //offset.set(20,30);
-      //400 gravity
-      acceleration.y = Main.GRAVITY;
+
       damage = 1;
-      //set max velocities
-      maxVelocity.x = maxVelocity.y = MAXVELOCITY;
-      // Set drag
-      drag.x = drag.y = Main.DRAG;
       //elasticity == bounciness, 1 is full bounce
-      //elasticity = .1;
+      elasticity = .1;
       //set health to 13
       health = 13;
       }
       //movement function
-      function defaultState(){
+      override function defaultState(){
 
         animation.play("walk");
         velocity.x = SPEED;
         if(hitByBullet){
-          control.popState();
+          controller.popState();
           //push the hit state
-          control.pushState(hit);
+          controller.pushState(hit);
 
         }
         else if(justTouched(FlxObject.WALL)){
         //  trace("Turn should get pushed");
-          control.popState();
-          control.pushState(turn);
+          controller.popState();
+          controller.pushState(turn);
 
         }
 
@@ -84,8 +71,8 @@ class Enemy extends Entity
         }else{
           facing = FlxObject.RIGHT;
         }
-        control.popState();
-        control.pushState(defaultState);
+        controller.popState();
+        controller.pushState(defaultState);
 
       }
       function hit(){
@@ -101,8 +88,8 @@ class Enemy extends Entity
         }
         }else{
 
-        control.popState();
-        control.pushState(defaultState);
+        controller.popState();
+        controller.pushState(defaultState);
       }
       }
       function hitEnemy(enemy:Enemy,bullet:Square):Void{
@@ -118,10 +105,8 @@ class Enemy extends Entity
 
     override public function update(elapsed:Float):Void{
       FlxG.collide(this,bs.bullets,hitEnemy);
-      FlxG.collide(bs.map,this);
-      //abstractify player hit and bullet hit
       FlxG.collide(this,bs.player,hitPlayer);
-      control.update();
+      controller.update();
 
         super.update(elapsed);
 

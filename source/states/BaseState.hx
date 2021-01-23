@@ -36,13 +36,15 @@ public function checkPass(player:FlxSprite,item:FlxSprite):Void{
 }
 public function loadMap(csv:String,tiles:String):Void{
   map = new FlxTilemap();
-  map.loadMapFromCSV(csv,tiles);
+  map.loadMapFromCSV(csv,tiles,64,64,0,1);
+
   //map.screenCenter;
   add(map);
 }
 public function loadItems(csv:String,img:String){
   itemMap = new FlxTilemap();
   itemMap.loadMapFromCSV(csv,img);
+
   //itemMap.screenCenter();
   items = new FlxTypedGroup<Item>();
 }

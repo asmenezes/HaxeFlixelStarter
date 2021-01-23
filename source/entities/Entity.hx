@@ -22,10 +22,23 @@ class Entity extends FlxSprite{
   private var left:Bool = false;
   private var right:Bool = false;
 
-  private function new(x:Float,y:Float,state:BaseState){
-    //Get and set the state the player will be in
-    bs=state;
+  public function new(x:Float,y:Float,state:BaseState){
 
     super(x,y);
+    bs=state;
+    controller = new FSM();
+    controller.pushState(defaultState);
+    acceleration.y = Main.GRAVITY;
+    drag.x = drag.y = Main.DRAG;
+    maxVelocity.x = maxVelocity.y = Main.MAXVELOCITY;
+
+
+  }
+  override public function update(elapsed:Float):Void{
+          FlxG.collide(bs.map,this);
+          super.update(elapsed);
+  }
+  public function defaultState():Void{
+    //override this funciton
   }
 }

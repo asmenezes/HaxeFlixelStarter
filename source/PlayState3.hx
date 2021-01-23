@@ -14,22 +14,22 @@ import flixel.FlxObject;
 import flixel.math.FlxPoint;
 import states.BaseState;
 import flixel.FlxSprite;
-class PlayState2 extends BaseState
+class PlayState3 extends BaseState
 {
 
     override public function create():Void
     {
 
 
-        loadMap("assets/data/map.csv","assets/images/TileSheet.png");
-        loadItems("assets/data/mapItems.csv","assets/images/itemSheet.png");
-        addItems(1,cast(Diamond.new));
-        addItems(2,cast(Door.new));
+        loadMap("assets/maps/map2_Map.csv","assets/images/TileSheetLong.png");
+        loadItems("assets/maps/map2_Items.csv","assets/images/TileSheetLong.png");
+        addItems(11,cast(Diamond.new));
+        addItems(50,cast(Door.new));
         player = new Player(90,90,this);
         add(player);
         bullets = new FlxTypedGroup<Square>(50);
         add(bullets);
-        super.create();
+          super.create();
     }
 
 

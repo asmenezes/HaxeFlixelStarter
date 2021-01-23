@@ -39,17 +39,12 @@ var cSound: FlxSound;
       offset.set(20,30);
       //set the health
       health = 5;
-      //400 gravity
-      acceleration.y = Main.GRAVITY;
-      //set max velocities
-      maxVelocity.x = maxVelocity.y = 300;
-      // Set drag
-      drag.x = drag.y = Main.DRAG;
+
       //elasticity == bounciness, 1 is full bounce
       //elasticity = .1;
       }
       //movement function
-      function move(elapsed:Float){
+      override function defaultState(){
         //get the buttons pressed
         up = FlxG.keys.justPressed.UP || FlxG.keys.justPressed.W;
         down = FlxG.keys.anyPressed([DOWN, S]);
@@ -98,7 +93,7 @@ var cSound: FlxSound;
       //call the movement function to move
       FlxG.collide(bs.map,this);
       FlxG.overlap(this,bs.items,collectItem);
-      move(elapsed);
+      defaultState();
       shoot();
         super.update(elapsed);
 
