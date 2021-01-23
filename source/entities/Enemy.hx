@@ -20,7 +20,7 @@ class Enemy extends Entity
       //Have to call super first
       super(x,y,pstate);
       //Attempt to get an atlas
-
+      SPEED = 200;
       var atlasFrames = FlxAtlasFrames.fromTexturePackerJson("assets/images/EnemySheet1.png","assets/images/EnemySheet1.json");
 
       frames = atlasFrames;
@@ -50,13 +50,14 @@ class Enemy extends Entity
         animation.play("walk");
         velocity.x = SPEED;
         if(hitByBullet){
+          trace(SPEED);
           controller.popState();
           //push the hit state
           controller.pushState(hit);
 
         }
-        else if(justTouched(FlxObject.WALL)){
-        //  trace("Turn should get pushed");
+        else if(justTouched(FlxObject.RIGHT)||justTouched(FlxObject.LEFT)){
+          trace("Turn should get pushed");
           controller.popState();
           controller.pushState(turn);
 
@@ -64,7 +65,7 @@ class Enemy extends Entity
 
       }
     function turn(){
-          //trace( "Turning Enemy" );
+          trace( "Turning Enemy" );
         SPEED *= -1;
         if(facing == FlxObject.RIGHT){
           facing = FlxObject.LEFT;

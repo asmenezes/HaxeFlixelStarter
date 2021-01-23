@@ -23,13 +23,15 @@ class PlayState3 extends BaseState
 
         loadMap("assets/maps/map2_Map.csv","assets/images/TileSheetLong.png");
         loadItems("assets/maps/map2_Items.csv","assets/images/TileSheetLong.png");
-        addItems(11,cast(Diamond.new));
-        addItems(50,cast(Door.new));
+        loadEntities("assets/maps/map2_Entities.csv","assets/images/TileSheetLong.png");
+        addObjects(11,cast(itemMap),cast(items),cast(Diamond.new),32);
+        addObjects(50,cast(itemMap),cast(items),cast(Door.new),32);
+        addObjects(9,(cast(entityMap)),cast(entities),cast(Enemy.new),100);
         player = new Player(90,90,this);
         add(player);
         bullets = new FlxTypedGroup<Square>(50);
         add(bullets);
-          super.create();
+        super.create();
     }
 
 

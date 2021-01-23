@@ -57,17 +57,19 @@ public function loadEntities(csv:String,img:String){
   entities = new FlxTypedGroup<Entity>();
 }
 
-public function addItems(id:Int,cls):Void{
+public function addObjects(id:Int,objMap:FlxTilemap,objGroup:FlxTypedGroup<FlxSprite>,cls,hheight:Int):Void{
 
-  var itemLocations:Array<FlxPoint> = itemMap.getTileCoords(id);
-  for(itm in itemLocations){
-    addItem(itm,cls);
+  var objectLocations:Array<FlxPoint> = objMap.getTileCoords(id);
+  for(loc in objectLocations){
+    addObject(loc,objGroup,cls,hheight);
   }
-  add(items);
+  add(objGroup);
 }
-
-public function addItem(loc:FlxPoint,cls){
-  items.add(cls(loc.x - 32,loc.y -32,this));
+/*  var itemLocations:Array<FlxPoint> = itemMap.getTileCoords(id);
+  for(itm in itemLocations){
+    addItem(itm,cls);*/
+public function addObject(loc:FlxPoint,objs,cls,hheight){
+  objs.add(cls(loc.x - hheight,loc.y -hheight,this));
 }
 }
 /*
