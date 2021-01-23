@@ -14,8 +14,10 @@ import objects.Diamond;
 import objects.Door;
 import entities.Player;
 class BaseState extends FlxState{
+  public var entities:FlxTypedGroup<Entity>;
   public var player:Player;
   public var itemMap:FlxTilemap;
+  public var entityMap:FlxTilemap;
   public var map:FlxTilemap;
   public var items:FlxTypedGroup<Item>;
   public var bullets:FlxTypedGroup<Square>;
@@ -49,6 +51,12 @@ public function loadItems(csv:String,img:String){
   items = new FlxTypedGroup<Item>();
 }
 
+public function loadEntities(csv:String,img:String){
+  entityMap = new FlxTilemap();
+  entityMap.loadMapFromCSV(csv,img);
+  entities = new FlxTypedGroup<Entity>();
+}
+
 public function addItems(id:Int,cls):Void{
 
   var itemLocations:Array<FlxPoint> = itemMap.getTileCoords(id);
@@ -57,6 +65,7 @@ public function addItems(id:Int,cls):Void{
   }
   add(items);
 }
+
 public function addItem(loc:FlxPoint,cls){
   items.add(cls(loc.x - 32,loc.y -32,this));
 }
