@@ -38,7 +38,7 @@ var cSound: FlxSound;
       setSize(55,66);
       offset.set(20,30);
       //set the health
-      health = 5;
+      health = 25;
 
       //elasticity == bounciness, 1 is full bounce
       //elasticity = .1;

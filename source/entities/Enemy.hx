@@ -57,7 +57,7 @@ class Enemy extends Entity
 
         }
         else if(justTouched(FlxObject.RIGHT)||justTouched(FlxObject.LEFT)){
-          trace("Turn should get pushed");
+          //trace("Turn should get pushed");
           controller.popState();
           controller.pushState(turn);
 
@@ -65,7 +65,7 @@ class Enemy extends Entity
 
       }
     function turn(){
-          trace( "Turning Enemy" );
+          //trace( "Turning Enemy" );
         SPEED *= -1;
         if(facing == FlxObject.RIGHT){
           facing = FlxObject.LEFT;
@@ -79,7 +79,7 @@ class Enemy extends Entity
       function hit(){
         if(hitByBullet){
           hurt(2);
-          trace("Totally Got hit");
+
         }
         hitByBullet = false;
         if(!animation.finished){
@@ -105,6 +105,8 @@ class Enemy extends Entity
 
 
     override public function update(elapsed:Float):Void{
+      FlxG.collide(bs.map,this);
+      FlxG.collide(bs.entities,this);
       FlxG.collide(this,bs.bullets,hitEnemy);
       FlxG.collide(this,bs.player,hitPlayer);
       controller.update();
