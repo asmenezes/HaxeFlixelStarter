@@ -20,7 +20,6 @@ class PlayState3 extends BaseState
     override public function create():Void
     {
 
-
         loadMap("assets/maps/map2_Map.csv","assets/images/TileSheetLong.png");
         loadItems("assets/maps/map2_Items.csv","assets/images/TileSheetLong.png");
         loadEntities("assets/maps/map2_Entities.csv","assets/images/TileSheetLong.png");
