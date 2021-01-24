@@ -12,7 +12,7 @@ var ps: BaseState;
     {
       ps = pState;
       damage = 2;
-        super(x,y);
+        super(x,y+20);
         loadGraphic("assets/images/Square.png");
         velocity.y=20;
         velocity.x = if (right) 900 else -900;
