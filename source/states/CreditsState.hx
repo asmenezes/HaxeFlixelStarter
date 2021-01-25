@@ -15,7 +15,7 @@ class CreditsState extends FlxState{
       add(playButton);
       FlxG.camera.bgColor = FlxColor.fromString("#96ace8");
       var disp = new FlxText();
-      disp.text = "Made with HaxeFlixel. (HaxeFlixel.com)\nCode and enemy sprite by me. \nAll other art by Kenney. (Kenney.nl)\nSound Effects made in BFXR. (bfxr.net)\nMusic by Joth. (https://opengameart.org/users/joth)";
+      disp.text = "Made with HaxeFlixel. (HaxeFlixel.com)\nCode and enemy sprite by me. \nAll other art by Kenney. (Kenney.nl)\nSound Effects made in BFXR. (bfxr.net)\nMusic by Joth. (https://opengameart.org/users/joth)\nAnd Matthew Pablo. (https://opengameart.org/users/matthew-pablo)";
       disp.color = FlxColor.BLACK;
       disp.size = 15;
       disp.screenCenter();

@@ -8,6 +8,10 @@ class MenuState extends FlxState{
    var playButton:FlxButton;
    var creditsButton:FlxButton;
     override public function create():Void{
+      if (FlxG.sound.music == null || FlxG.sound.music.playing == false)
+{
+FlxG.sound.playMusic("assets/music/Soliloquy.mp3", 1, true);
+}
       playButton = new FlxButton(0, 0, "Play", clickPlay);
       playButton.screenCenter();
       add(playButton);
@@ -23,9 +27,11 @@ class MenuState extends FlxState{
         super.update(elapsed);
     }
     function clickPlay(){
+      FlxG.sound.pause();
     FlxG.switchState(new PlayState3());
 }
 function clickCredits(){
+  FlxG.sound.pause();
 FlxG.switchState(new states.CreditsState());
 }
 }
