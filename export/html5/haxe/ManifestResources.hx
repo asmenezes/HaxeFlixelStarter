@@ -68,7 +68,7 @@ import sys.FileSystem;
 
 		#else
 
-		data = '{"name":null,"assets":"aoy4:pathy36:assets%2Fmusic%2Fmusic-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R7R6tgoR0y25:assets%2Fdata%2Ftest.jsonR2i17133R3R4R5R8R6tgoR0y34:assets%2Fdata%2Fdata-goes-here.txtR2zR3R4R5R9R6tgoR0y23:assets%2Fdata%2Fmap.tmxR2i922R3R4R5R10R6tgoR0y23:assets%2Fdata%2Fmap.csvR2i380R3R4R5R11R6tgoR0y27:assets%2Fdata%2FLevels.ogmoR2i79524R3R4R5R12R6tgoR0y31:assets%2Fimages%2FCharSheet.pngR2i24954R3y5:IMAGER5R13R6tgoR0y31:assets%2Fimages%2FTileSheet.pngR2i10035R3R14R5R15R6tgoR0y31:assets%2Fimages%2FGreenDoor.pngR2i3021R3R14R5R16R6tgoR0y28:assets%2Fimages%2FSquare.pngR2i1814R3R14R5R17R6tgoR0y29:assets%2Fimages%2FTile001.pngR2i3528R3R14R5R18R6tgoR0y29:assets%2Fimages%2FDiamond.pngR2i2020R3R14R5R19R6tgoR2i39706R3y5:MUSICR5y28:flixel%2Fsounds%2Fflixel.mp3y9:pathGroupaR21y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i2114R3R20R5y26:flixel%2Fsounds%2Fbeep.mp3R22aR24y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i33629R3y5:SOUNDR5R23R22aR21R23hgoR2i5794R3R26R5R25R22aR24R25hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R27R28y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i519R3R14R5R33R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i3280R3R14R5R34R6tgh","rootPath":null,"version":2,"libraryArgs":[],"libraryType":null}';
+		data = '{"name":null,"assets":"aoy4:sizei822251y4:typey5:MUSICy2:idy41:assets%2Fmusic%2FMandatory%20Overtime.mp3y9:pathGroupaR4hy7:preloadtgoy4:pathy36:assets%2Fmusic%2Fmusic-goes-here.txtR0zR1y4:TEXTR3R8R6tgoR0i5567529R1R2R3y30:assets%2Fmusic%2FSoliloquy.mp3R5aR10hR6tgoR0i33254R1y5:SOUNDR3y27:assets%2Fsounds%2Fshoot.wavR5aR12hR6tgoR0i40736R1R11R3y28:assets%2Fsounds%2Fpickup.wavR5aR13hR6tgoR7y36:assets%2Fsounds%2Fsounds-go-here.txtR0zR1R9R3R14R6tgoR0i12058R1R11R3y28:assets%2Fsounds%2Fselect.wavR5aR15hR6tgoR7y24:assets%2Fmaps%2Fmap2.tmxR0i4948R1R9R3R16R6tgoR7y25:assets%2Fmaps%2Fitems.tsxR0i3632R1R9R3R17R6tgoR7y42:assets%2Fmaps%2FplatformPack_tilesheet.pngR0i65327R1y5:IMAGER3R18R6tgoR7y30:assets%2Fmaps%2Fmap2_Items.csvR0i1800R1R9R3R20R6tgoR7y33:assets%2Fmaps%2Fmap2_Entities.csvR0i1797R1R9R3R21R6tgoR7y28:assets%2Fmaps%2Fmap2_Map.csvR0i1649R1R9R3R22R6tgoR7y24:assets%2Fdata%2Fmap2.tmxR0i12359R1R9R3R23R6tgoR7y28:assets%2Fdata%2FmapItems.csvR0i451R1R9R3R24R6tgoR7y23:assets%2Fdata%2Fmap.tmxR0i331R1R9R3R25R6tgoR7y23:assets%2Fdata%2Fmap.csvR0i380R1R9R3R26R6tgoR7y31:assets%2Fimages%2FCharSheet.pngR0i30550R1R19R3R27R6tgoR7y31:assets%2Fimages%2FTileSheet.pngR0i10035R1R19R3R28R6tgoR7y35:assets%2Fimages%2FTileSheetLong.pngR0i55983R1R19R3R29R6tgoR7y33:assets%2Fimages%2FEnemySheet1.pngR0i45049R1R19R3R30R6tgoR7y31:assets%2Fimages%2FGreenDoor.pngR0i3021R1R19R3R31R6tgoR7y34:assets%2Fimages%2FEnemySheet1.jsonR0i3912R1R9R3R32R6tgoR7y28:assets%2Fimages%2FSquare.pngR0i12450R1R19R3R33R6tgoR7y36:assets%2Fimages%2FTileSheetLong.jsonR0i17277R1R9R3R34R6tgoR7y29:assets%2Fimages%2FTile001.pngR0i3528R1R19R3R35R6tgoR7y42:assets%2Fimages%2FplatformPack_item014.pngR0i2302R1R19R3R36R6tgoR7y36:assets%2Fimages%2FTileSheetLong1.pngR0i55654R1R19R3R37R6tgoR7y34:assets%2Fimages%2FMonster_Walk.pngR0i10809R1R19R3R38R6tgoR7y41:assets%2Fimages%2FPink_Monster_Walk_6.pngR0i1426R1R19R3R39R6tgoR7y37:assets%2Fimages%2FbackgroundEmpty.pngR0i9444R1R19R3R40R6tgoR7y31:assets%2Fimages%2FitemSheet.pngR0i9629R1R19R3R41R6tgoR7y29:assets%2Fimages%2FDiamond.pngR0i10630R1R19R3R42R6tgoR0i39706R1R2R3y28:flixel%2Fsounds%2Fflixel.mp3R5aR43y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR0i2114R1R2R3y26:flixel%2Fsounds%2Fbeep.mp3R5aR45y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR0i33629R1R11R3R44R5aR43R44hgoR0i5794R1R11R3R46R5aR45R46hgoR0i15744R1y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR3y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR0i29724R1R47R48y36:__ASSET__flixel_fonts_monsterrat_ttfR3y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR7y33:flixel%2Fimages%2Fui%2Fbutton.pngR0i519R1R19R3R53R6tgoR7y36:flixel%2Fimages%2Flogo%2Fdefault.pngR0i3280R1R19R3R54R6tgh","rootPath":null,"version":2,"libraryArgs":[],"libraryType":null}';
 		manifest = AssetManifest.parse (data, rootPath);
 		library = AssetLibrary.fromManifest (manifest);
 		Assets.registerLibrary ("default", library);
@@ -96,18 +96,38 @@ null
 #if !display
 #if flash
 
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_mandatory_overtime_mp3 extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_soliloquy_mp3 extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_shoot_wav extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_pickup_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends null { }
-@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_test_json extends null { }
-@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_data_goes_here_txt extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_select_wav extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_map2_tmx extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_items_tsx extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_platformpack_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_map2_items_csv extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_map2_entities_csv extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_maps_map2_map_csv extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_map2_tmx extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_mapitems_csv extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_map_tmx extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_map_csv extends null { }
-@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_levels_ogmo extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_charsheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_tilesheetlong_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_enemysheet1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_greendoor_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_enemysheet1_json extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_square_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_tilesheetlong_json extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_tile001_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_platformpack_item014_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_tilesheetlong1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_monster_walk_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_pink_monster_walk_6_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_backgroundempty_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_itemsheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_diamond_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends null { }
@@ -122,18 +142,38 @@ null
 
 #elseif (desktop || cpp)
 
+@:keep @:file("assets/music/Mandatory Overtime.mp3") @:noCompletion #if display private #end class __ASSET__assets_music_mandatory_overtime_mp3 extends haxe.io.Bytes {}
 @:keep @:file("assets/music/music-goes-here.txt") @:noCompletion #if display private #end class __ASSET__assets_music_music_goes_here_txt extends haxe.io.Bytes {}
+@:keep @:file("assets/music/Soliloquy.mp3") @:noCompletion #if display private #end class __ASSET__assets_music_soliloquy_mp3 extends haxe.io.Bytes {}
+@:keep @:file("assets/sounds/shoot.wav") @:noCompletion #if display private #end class __ASSET__assets_sounds_shoot_wav extends haxe.io.Bytes {}
+@:keep @:file("assets/sounds/pickup.wav") @:noCompletion #if display private #end class __ASSET__assets_sounds_pickup_wav extends haxe.io.Bytes {}
 @:keep @:file("assets/sounds/sounds-go-here.txt") @:noCompletion #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends haxe.io.Bytes {}
-@:keep @:file("assets/data/test.json") @:noCompletion #if display private #end class __ASSET__assets_data_test_json extends haxe.io.Bytes {}
-@:keep @:file("assets/data/data-goes-here.txt") @:noCompletion #if display private #end class __ASSET__assets_data_data_goes_here_txt extends haxe.io.Bytes {}
+@:keep @:file("assets/sounds/select.wav") @:noCompletion #if display private #end class __ASSET__assets_sounds_select_wav extends haxe.io.Bytes {}
+@:keep @:file("assets/maps/map2.tmx") @:noCompletion #if display private #end class __ASSET__assets_maps_map2_tmx extends haxe.io.Bytes {}
+@:keep @:file("assets/maps/items.tsx") @:noCompletion #if display private #end class __ASSET__assets_maps_items_tsx extends haxe.io.Bytes {}
+@:keep @:image("assets/maps/platformPack_tilesheet.png") @:noCompletion #if display private #end class __ASSET__assets_maps_platformpack_tilesheet_png extends lime.graphics.Image {}
+@:keep @:file("assets/maps/map2_Items.csv") @:noCompletion #if display private #end class __ASSET__assets_maps_map2_items_csv extends haxe.io.Bytes {}
+@:keep @:file("assets/maps/map2_Entities.csv") @:noCompletion #if display private #end class __ASSET__assets_maps_map2_entities_csv extends haxe.io.Bytes {}
+@:keep @:file("assets/maps/map2_Map.csv") @:noCompletion #if display private #end class __ASSET__assets_maps_map2_map_csv extends haxe.io.Bytes {}
+@:keep @:file("assets/data/map2.tmx") @:noCompletion #if display private #end class __ASSET__assets_data_map2_tmx extends haxe.io.Bytes {}
+@:keep @:file("assets/data/mapItems.csv") @:noCompletion #if display private #end class __ASSET__assets_data_mapitems_csv extends haxe.io.Bytes {}
 @:keep @:file("assets/data/map.tmx") @:noCompletion #if display private #end class __ASSET__assets_data_map_tmx extends haxe.io.Bytes {}
 @:keep @:file("assets/data/map.csv") @:noCompletion #if display private #end class __ASSET__assets_data_map_csv extends haxe.io.Bytes {}
-@:keep @:file("assets/data/Levels.ogmo") @:noCompletion #if display private #end class __ASSET__assets_data_levels_ogmo extends haxe.io.Bytes {}
 @:keep @:image("assets/images/CharSheet.png") @:noCompletion #if display private #end class __ASSET__assets_images_charsheet_png extends lime.graphics.Image {}
 @:keep @:image("assets/images/TileSheet.png") @:noCompletion #if display private #end class __ASSET__assets_images_tilesheet_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/TileSheetLong.png") @:noCompletion #if display private #end class __ASSET__assets_images_tilesheetlong_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/EnemySheet1.png") @:noCompletion #if display private #end class __ASSET__assets_images_enemysheet1_png extends lime.graphics.Image {}
 @:keep @:image("assets/images/GreenDoor.png") @:noCompletion #if display private #end class __ASSET__assets_images_greendoor_png extends lime.graphics.Image {}
+@:keep @:file("assets/images/EnemySheet1.json") @:noCompletion #if display private #end class __ASSET__assets_images_enemysheet1_json extends haxe.io.Bytes {}
 @:keep @:image("assets/images/Square.png") @:noCompletion #if display private #end class __ASSET__assets_images_square_png extends lime.graphics.Image {}
+@:keep @:file("assets/images/TileSheetLong.json") @:noCompletion #if display private #end class __ASSET__assets_images_tilesheetlong_json extends haxe.io.Bytes {}
 @:keep @:image("assets/images/Tile001.png") @:noCompletion #if display private #end class __ASSET__assets_images_tile001_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/platformPack_item014.png") @:noCompletion #if display private #end class __ASSET__assets_images_platformpack_item014_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/TileSheetLong1.png") @:noCompletion #if display private #end class __ASSET__assets_images_tilesheetlong1_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/Monster_Walk.png") @:noCompletion #if display private #end class __ASSET__assets_images_monster_walk_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/Pink_Monster_Walk_6.png") @:noCompletion #if display private #end class __ASSET__assets_images_pink_monster_walk_6_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/backgroundEmpty.png") @:noCompletion #if display private #end class __ASSET__assets_images_backgroundempty_png extends lime.graphics.Image {}
+@:keep @:image("assets/images/itemSheet.png") @:noCompletion #if display private #end class __ASSET__assets_images_itemsheet_png extends lime.graphics.Image {}
 @:keep @:image("assets/images/Diamond.png") @:noCompletion #if display private #end class __ASSET__assets_images_diamond_png extends lime.graphics.Image {}
 @:keep @:file("/home/user/haxelib/flixel/4,8,1/assets/sounds/flixel.mp3") @:noCompletion #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends haxe.io.Bytes {}
 @:keep @:file("/home/user/haxelib/flixel/4,8,1/assets/sounds/beep.mp3") @:noCompletion #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends haxe.io.Bytes {}
