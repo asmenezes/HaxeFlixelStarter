@@ -893,7 +893,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "40";
+	app.meta.h["build"] = "44";
 	app.meta.h["company"] = "HaxeFlixel";
 	app.meta.h["file"] = "ShootyPlat";
 	app.meta.h["name"] = "ShootyPlat";
@@ -4438,7 +4438,7 @@ ManifestResources.init = function(config) {
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:sizei822251y4:typey5:MUSICy2:idy41:assets%2Fmusic%2FMandatory%20Overtime.mp3y9:pathGroupaR4hy7:preloadtgoy4:pathy36:assets%2Fmusic%2Fmusic-goes-here.txtR0zR1y4:TEXTR3R8R6tgoR0i5567529R1R2R3y30:assets%2Fmusic%2FSoliloquy.mp3R5aR10hR6tgoR0i33254R1y5:SOUNDR3y27:assets%2Fsounds%2Fshoot.wavR5aR12hR6tgoR0i40736R1R11R3y28:assets%2Fsounds%2Fpickup.wavR5aR13hR6tgoR7y36:assets%2Fsounds%2Fsounds-go-here.txtR0zR1R9R3R14R6tgoR0i12058R1R11R3y28:assets%2Fsounds%2Fselect.wavR5aR15hR6tgoR7y24:assets%2Fmaps%2Fmap2.tmxR0i4948R1R9R3R16R6tgoR7y25:assets%2Fmaps%2Fitems.tsxR0i3632R1R9R3R17R6tgoR7y42:assets%2Fmaps%2FplatformPack_tilesheet.pngR0i65327R1y5:IMAGER3R18R6tgoR7y30:assets%2Fmaps%2Fmap2_Items.csvR0i1800R1R9R3R20R6tgoR7y33:assets%2Fmaps%2Fmap2_Entities.csvR0i1797R1R9R3R21R6tgoR7y28:assets%2Fmaps%2Fmap2_Map.csvR0i1649R1R9R3R22R6tgoR7y24:assets%2Fdata%2Fmap2.tmxR0i12359R1R9R3R23R6tgoR7y28:assets%2Fdata%2FmapItems.csvR0i451R1R9R3R24R6tgoR7y23:assets%2Fdata%2Fmap.tmxR0i331R1R9R3R25R6tgoR7y23:assets%2Fdata%2Fmap.csvR0i380R1R9R3R26R6tgoR7y31:assets%2Fimages%2FCharSheet.pngR0i30550R1R19R3R27R6tgoR7y31:assets%2Fimages%2FTileSheet.pngR0i10035R1R19R3R28R6tgoR7y35:assets%2Fimages%2FTileSheetLong.pngR0i55983R1R19R3R29R6tgoR7y33:assets%2Fimages%2FEnemySheet1.pngR0i45049R1R19R3R30R6tgoR7y31:assets%2Fimages%2FGreenDoor.pngR0i3021R1R19R3R31R6tgoR7y34:assets%2Fimages%2FEnemySheet1.jsonR0i3912R1R9R3R32R6tgoR7y28:assets%2Fimages%2FSquare.pngR0i12450R1R19R3R33R6tgoR7y36:assets%2Fimages%2FTileSheetLong.jsonR0i17277R1R9R3R34R6tgoR7y29:assets%2Fimages%2FTile001.pngR0i3528R1R19R3R35R6tgoR7y42:assets%2Fimages%2FplatformPack_item014.pngR0i2302R1R19R3R36R6tgoR7y36:assets%2Fimages%2FTileSheetLong1.pngR0i55654R1R19R3R37R6tgoR7y34:assets%2Fimages%2FMonster_Walk.pngR0i10809R1R19R3R38R6tgoR7y41:assets%2Fimages%2FPink_Monster_Walk_6.pngR0i1426R1R19R3R39R6tgoR7y37:assets%2Fimages%2FbackgroundEmpty.pngR0i9444R1R19R3R40R6tgoR7y31:assets%2Fimages%2FitemSheet.pngR0i9629R1R19R3R41R6tgoR7y29:assets%2Fimages%2FDiamond.pngR0i10630R1R19R3R42R6tgoR0i39706R1R2R3y28:flixel%2Fsounds%2Fflixel.mp3R5aR43y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR0i2114R1R2R3y26:flixel%2Fsounds%2Fbeep.mp3R5aR45y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR0i33629R1R11R3R44R5aR43R44hgoR0i5794R1R11R3R46R5aR45R46hgoR0i15744R1y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR3y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR0i29724R1R47R48y36:__ASSET__flixel_fonts_monsterrat_ttfR3y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR7y33:flixel%2Fimages%2Fui%2Fbutton.pngR0i519R1R19R3R53R6tgoR7y36:flixel%2Fimages%2Flogo%2Fdefault.pngR0i3280R1R19R3R54R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:sizei822251y4:typey5:MUSICy2:idy38:assets%2Fmusic%2FMandatoryOvertime.mp3y9:pathGroupaR4hy7:preloadtgoy4:pathy36:assets%2Fmusic%2Fmusic-goes-here.txtR0zR1y4:TEXTR3R8R6tgoR0i5567529R1R2R3y30:assets%2Fmusic%2FSoliloquy.mp3R5aR10hR6tgoR0i33254R1y5:SOUNDR3y27:assets%2Fsounds%2Fshoot.wavR5aR12hR6tgoR0i40736R1R11R3y28:assets%2Fsounds%2Fpickup.wavR5aR13hR6tgoR7y36:assets%2Fsounds%2Fsounds-go-here.txtR0zR1R9R3R14R6tgoR0i12058R1R11R3y28:assets%2Fsounds%2Fselect.wavR5aR15hR6tgoR7y24:assets%2Fmaps%2Fmap2.tmxR0i4948R1R9R3R16R6tgoR7y25:assets%2Fmaps%2Fitems.tsxR0i3632R1R9R3R17R6tgoR7y42:assets%2Fmaps%2FplatformPack_tilesheet.pngR0i65327R1y5:IMAGER3R18R6tgoR7y30:assets%2Fmaps%2Fmap2_Items.csvR0i1800R1R9R3R20R6tgoR7y33:assets%2Fmaps%2Fmap2_Entities.csvR0i1797R1R9R3R21R6tgoR7y28:assets%2Fmaps%2Fmap2_Map.csvR0i1649R1R9R3R22R6tgoR7y24:assets%2Fdata%2Fmap2.tmxR0i12359R1R9R3R23R6tgoR7y28:assets%2Fdata%2FmapItems.csvR0i451R1R9R3R24R6tgoR7y23:assets%2Fdata%2Fmap.tmxR0i331R1R9R3R25R6tgoR7y23:assets%2Fdata%2Fmap.csvR0i380R1R9R3R26R6tgoR7y31:assets%2Fimages%2FCharSheet.pngR0i30550R1R19R3R27R6tgoR7y31:assets%2Fimages%2FTileSheet.pngR0i10035R1R19R3R28R6tgoR7y35:assets%2Fimages%2FTileSheetLong.pngR0i55983R1R19R3R29R6tgoR7y33:assets%2Fimages%2FEnemySheet1.pngR0i45049R1R19R3R30R6tgoR7y31:assets%2Fimages%2FGreenDoor.pngR0i3021R1R19R3R31R6tgoR7y34:assets%2Fimages%2FEnemySheet1.jsonR0i3912R1R9R3R32R6tgoR7y28:assets%2Fimages%2FSquare.pngR0i12450R1R19R3R33R6tgoR7y36:assets%2Fimages%2FTileSheetLong.jsonR0i17277R1R9R3R34R6tgoR7y29:assets%2Fimages%2FTile001.pngR0i3528R1R19R3R35R6tgoR7y42:assets%2Fimages%2FplatformPack_item014.pngR0i2302R1R19R3R36R6tgoR7y36:assets%2Fimages%2FTileSheetLong1.pngR0i55654R1R19R3R37R6tgoR7y34:assets%2Fimages%2FMonster_Walk.pngR0i10809R1R19R3R38R6tgoR7y41:assets%2Fimages%2FPink_Monster_Walk_6.pngR0i1426R1R19R3R39R6tgoR7y37:assets%2Fimages%2FbackgroundEmpty.pngR0i9444R1R19R3R40R6tgoR7y31:assets%2Fimages%2FitemSheet.pngR0i9629R1R19R3R41R6tgoR7y29:assets%2Fimages%2FDiamond.pngR0i10630R1R19R3R42R6tgoR0i39706R1R2R3y28:flixel%2Fsounds%2Fflixel.mp3R5aR43y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR0i2114R1R2R3y26:flixel%2Fsounds%2Fbeep.mp3R5aR45y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR0i33629R1R11R3R44R5aR43R44hgoR0i5794R1R11R3R46R5aR45R46hgoR0i15744R1y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR3y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR0i29724R1R47R48y36:__ASSET__flixel_fonts_monsterrat_ttfR3y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR7y33:flixel%2Fimages%2Fui%2Fbutton.pngR0i519R1R19R3R53R6tgoR7y36:flixel%2Fimages%2Flogo%2Fdefault.pngR0i3280R1R19R3R54R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -5573,6 +5573,7 @@ states_BaseState.prototype = $extend(flixel_FlxState.prototype,{
 	,map: null
 	,items: null
 	,bullets: null
+	,bgMusic: null
 	,create: function() {
 		var _this = flixel_FlxG.worldBounds;
 		var X = this.map.x;
@@ -5600,6 +5601,15 @@ states_BaseState.prototype = $extend(flixel_FlxState.prototype,{
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
+	}
+	,playMusic: function(song) {
+		this.bgMusic = new flixel_system_FlxSound();
+		this.bgMusic.loadEmbedded(song,true,false);
+		this.add(this.bgMusic);
+		if(flixel_FlxG.sound.music == null || flixel_FlxG.sound.music._channel != null == false) {
+			this.bgMusic.play(false,0.0);
+			haxe_Log.trace(this.bgMusic,{ fileName : "source/states/BaseState.hx", lineNumber : 43, className : "states.BaseState", methodName : "playMusic"});
+		}
 	}
 	,checkPass: function(player,item) {
 	}
@@ -5642,9 +5652,7 @@ PlayState3.__name__ = "PlayState3";
 PlayState3.__super__ = states_BaseState;
 PlayState3.prototype = $extend(states_BaseState.prototype,{
 	create: function() {
-		if(flixel_FlxG.sound.music == null || flixel_FlxG.sound.music._channel != null == false) {
-			flixel_FlxG.sound.playMusic("assets/music/Mandatory Overtime.mp3",1,true);
-		}
+		this.playMusic("assets/music/MandatoryOvertime.mp3");
 		this.loadMap("assets/maps/map2_Map.csv","assets/images/TileSheetLong.png");
 		this.loadItems("assets/maps/map2_Items.csv","assets/images/TileSheetLong.png");
 		this.loadEntities("assets/maps/map2_Entities.csv","assets/images/TileSheetLong.png");
@@ -5667,7 +5675,7 @@ PlayState3.prototype = $extend(states_BaseState.prototype,{
 		states_BaseState.prototype.update.call(this,elapsed);
 	}
 	,checkPass: function(player,item) {
-		haxe_Log.trace("Check if Passed",{ fileName : "source/PlayState3.hx", lineNumber : 45, className : "PlayState3", methodName : "checkPass"});
+		haxe_Log.trace("Check if Passed",{ fileName : "source/PlayState3.hx", lineNumber : 42, className : "PlayState3", methodName : "checkPass"});
 	}
 	,__class__: PlayState3
 });
@@ -72250,7 +72258,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 667495;
+	this.version = 341632;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
