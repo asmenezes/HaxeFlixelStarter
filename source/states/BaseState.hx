@@ -13,6 +13,7 @@ import objects.Square;
 import objects.Diamond;
 import objects.Door;
 import entities.Player;
+import flixel.system.FlxSound;
 class BaseState extends FlxState{
   public var entities:FlxTypedGroup<Entity>;
   public var player:Player;
@@ -21,6 +22,7 @@ class BaseState extends FlxState{
   public var map:FlxTilemap;
   public var items:FlxTypedGroup<Item>;
   public var bullets:FlxTypedGroup<Square>;
+  public var bgMusic:FlxSound;
   override public function create():Void
   {
 
@@ -32,7 +34,16 @@ class BaseState extends FlxState{
 override public function update(elapsed:Float):Void{
   super.update(elapsed);
 }
+public function playMusic(song:String){
+  bgMusic = new FlxSound();
+  bgMusic.loadEmbedded(song,true,false);
+  add(bgMusic);
+  if (FlxG.sound.music == null || FlxG.sound.music.playing == false){
+bgMusic.play(false,0.0);
+    trace(bgMusic);
+}
 
+}
 public function checkPass(player:FlxSprite,item:FlxSprite):Void{
 //  Override this function in the level
 }

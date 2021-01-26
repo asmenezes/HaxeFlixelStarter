@@ -15,6 +15,7 @@ class Main extends Sprite
 
 	public function new()
 	{
+		//FlxG.sound.toggleMuted();
 		gems = 0;
 		super();
 		addChild(new FlxGame(0, 0, MenuState));

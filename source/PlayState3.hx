@@ -19,10 +19,7 @@ class PlayState3 extends BaseState
 
     override public function create():Void
     {
-      if (FlxG.sound.music == null || FlxG.sound.music.playing == false)
-{
-FlxG.sound.playMusic("assets/music/Mandatory Overtime.mp3", 1, true);
-}
+        playMusic("assets/music/MandatoryOvertime.mp3");
         loadMap("assets/maps/map2_Map.csv","assets/images/TileSheetLong.png");
         loadItems("assets/maps/map2_Items.csv","assets/images/TileSheetLong.png");
         loadEntities("assets/maps/map2_Entities.csv","assets/images/TileSheetLong.png");
