@@ -3,26 +3,25 @@ package objects;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import states.BaseState;
-/*
-//there are no Abstract classes like in java in Haxe so I just gotta make a class with a private constructor and extend that instead possibly also make an interface for security   ie https://stackoverflow.com/a/30431577
--Damage
--playstate
--on colision with player
-*/
+
 class Item extends FlxSprite{
   public var bs:BaseState;
 
 public function new(x:Float,y:Float,bState:BaseState){
+  //sets the items BaseState --- (required)
   bs = bState;
-
-super(x,y);
-acceleration.y = Main.GRAVITY;
+  //calls FlxSprite.new() --- (required)
+  super(x,y);
+  //sets gravity the item is affected by --- (optional)
+  acceleration.y = Main.GRAVITY;
 }
 override public function update(elapsed:Float){
+  //sets the item to collide with the states map --- (technically optional)
   FlxG.collide(bs.map,this);
+  //calls FlxSprite.update() --- (required)
   super.update(elapsed);
 }
 public function use():Void{
-
+  //override this function in item if you want something to happen when it gets touched
 }
 }

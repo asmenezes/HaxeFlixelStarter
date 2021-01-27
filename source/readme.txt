@@ -7,22 +7,22 @@ Main
 MenuState
   Just have a button that goes to the first level when clicked
 
-Playstate/levels
-  Should probably extend the playstate but for now thats not implemented yet
+BaseState/levels
+  each level should extend the BaseState
 
-Enemy class
-  Should probably get extended but not implemented yet
+Entity class
+  Should probably get extended, example shown
 
 Player class
   Only need the one so you probably can just edit the one there
 
 Statemachine
-  Not yet implemented
   Decides what each thing is doing at any given time by implementing a "Brain"
 
 Csv's
   Starts at 1 not 0, I usually have a blank first square to compensate
   need a csv for every "Layer" like the map, the enemies and the items
+  when creating an object layer map data thingy a bogus image of same tile size is needed (use your tilemap one)
 
 Loading Items
   For multiple items use the csv to import them for ease of use
@@ -34,7 +34,7 @@ Loading Maps
 Image Assets
   Single Images
   Sprite Sheets
-    Should be one row
+    Should be one row with blank tile in first slot
 
 Sound Assets
 
@@ -43,13 +43,3 @@ Physics and other
 Saving?
 
 When to use the float?
-
-
-
-Enemy State
-  Default - Move forward and play the walking animation (If close to player go to notice, if hit go to hit)
-  Hit - If hit stop and play hit animation, jump back a bit, then resume Default or if dead go to death
-  Notice - Play notice animation then go to Alert
-  Alert - If within a certain distance of player walk toward the player(If extra close go to attack if leave distance resume default)
-  Attack - if super close to player do attack animation
-  Death - Play death animation, then remove the enemy

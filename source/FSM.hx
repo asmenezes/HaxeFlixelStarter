@@ -1,4 +1,5 @@
 package;
+//Finite state machine to control entities --- you dont have to worry about this 
 class FSM
 {
     public var stack = [];

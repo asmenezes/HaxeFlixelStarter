@@ -7,7 +7,7 @@ class Square extends FlxSprite
 {
 public var damage:Int;
 var ps: BaseState;
-  //add a direction to constructor
+  
     public function new(x:Float,y:Float,right:Bool,pState:BaseState)
     {
       ps = pState;

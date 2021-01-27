@@ -15,35 +15,36 @@ var sSound: FlxSound;
 var cSound: FlxSound;
 
     public function new(x:Float = 0,y:Float = 0,pstate:BaseState){
-      //Have to call super first
+      //calls Entity.new() --- (required)
       super(x,y,pstate);
 
       //get playstate access
-      //set speed
+      //set speed of player movement --- (required)
       SPEED=300;
       //Load the sprite sheet
       loadGraphic("assets/images/CharSheet.png",true,96,96);
-      //shooty sound
+      //Load player sound effects --- (optional)
       sSound = FlxG.sound.load("assets/sounds/shoot.wav");
-      //Collection Sound
       cSound = FlxG.sound.load("assets/sounds/pickup.wav");
-      //make the sprite flippable
+      //make the sprite animations flippable --- (optional)
       setFacingFlip(FlxObject.LEFT,true,false);
       setFacingFlip(FlxObject.RIGHT,false,false);
-
+      //creates animations for the player --- (optional)
       //name of anim, frames to play, loops?, flip x?, flip y?
       animation.add("walk",[7,8],5,true,false);
       animation.add("idle",[5],5,false,false);
       animation.add("jump",[6],5,false,false);
       animation.add("shoot",[9],5,false,false);
-      //set the bounding box size 45 * 66, offset 30
+      //set the bounding box size and offset of Player --- (optional)
+      //45 * 66, offset 30
       setSize(55,66);
       offset.set(20,30);
-      //set the health
+      //set the health of the player --- (optional)
       health = 25;
-
+      //set the bounciness of the player --- (optional)
       //elasticity == bounciness, 1 is full bounce
-      //elasticity = .1;
+      elasticity = .1;
+
       }
       function getBtns(){
         //get the buttons pressed
@@ -60,10 +61,13 @@ var cSound: FlxSound;
         }
 
       }
-      //movement function
+      //movement function/default state for state machine --- (required)
+      /*this function MUST be overridden if you don't want to use a state machine
+      just put all player logic in this one function.
+      */
       override function defaultState(){
-
-
+        //movement right now is basic platformer movement
+        //change as required game by game
         if(up && isTouching(FlxObject.DOWN)){
           velocity.y = -1570;
         }else if (!isTouching(FlxObject.DOWN)){
@@ -88,7 +92,7 @@ var cSound: FlxSound;
         }
       }
       function shoot(){
-    
+        //shoot state for state machine --- (optional)
         if(!animation.finished){
           animation.play("shoot");
           sSound.play();
@@ -104,8 +108,8 @@ var cSound: FlxSound;
 
       }
       function fall(){
+        //fall function for state machine --- (optional)
         animation.play("jump");
-
         if (left){
           velocity.x = -SPEED;
           facing = FlxObject.LEFT;
@@ -122,6 +126,7 @@ var cSound: FlxSound;
         }
       }
       function idle(){
+        //idle function for state machine --- (optional)
         velocity.x = 0;
         animation.play("idle");
         if(up && isTouching(FlxObject.DOWN)){
@@ -139,29 +144,21 @@ var cSound: FlxSound;
         controller.pushState(defaultState);
         }
       }
+      //function called when player touches item --- (technically optional)
       function collectItem(player:Player,item){
+        //calls use function of the item touched --- (technically optional)
         item.use();
       }
     override public function update(elapsed:Float):Void{
+      //gets appropriate button input --- (technically optional)
       getBtns();
-      //call the movement function to move
+      //has player collide with map
       FlxG.collide(bs.map,this);
+      //calls collect item function when appropriate --- (optional)
       FlxG.overlap(this,bs.items,collectItem);
-    //  shoot();
+      //calls player state machine --- (required)
       controller.update();
-        super.update(elapsed);
-
-
+      //calls entity.update() --- (required)
+      super.update(elapsed);
     }
 }
-/*
-Side to side movement state is default
--if not touching floor then in jumping state
--if moving then and shoot do movingshoot state
-
-jumping state
--if touching floor then go to default state
-
-
-
-*/

@@ -1,5 +1,6 @@
 package entities;
-
+//example of how to extend Entity class
+//duplicate this and edit for each entity type --- (or do it the hard way)
 import flixel.FlxSprite;
 import objects.Square;
 import flixel.FlxG;
