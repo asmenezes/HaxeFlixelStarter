@@ -1,6 +1,6 @@
 package;
 //example of how to extend the BaseState
-//duplicate this and make adjustments for each level (or do it the hard way)  
+//duplicate this and make adjustments for each level (or do it the hard way)
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.addons.editors.tiled.TiledMap;
@@ -22,7 +22,7 @@ class PlayState3 extends BaseState
     {
         //load and play background music --- optional
         playMusic("assets/music/MandatoryOvertime.mp3");
-        //load tilemap and map --- (required)
+        //load tilemap and map --- (required((Kinda)))
         loadMap("assets/maps/map2_Map.csv","assets/images/TileSheetLong.png");
         //load item map and bogus images string --- (optional)
         loadItems("assets/maps/map2_Items.csv","assets/images/TileSheetLong.png");

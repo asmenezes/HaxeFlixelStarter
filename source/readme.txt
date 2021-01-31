@@ -5,7 +5,7 @@ Main
   On click immediately goes to the menu state
 
 MenuState
-  Just have a button that goes to the first level when clicked
+  Just have a button that goes to the first level when clicked and one for the credits
 
 BaseState/levels
   each level should extend the BaseState
@@ -37,9 +37,4 @@ Image Assets
     Should be one row with blank tile in first slot
 
 Sound Assets
-
-Physics and other
-
-Saving?
-
-When to use the float?
+  sometimes they work sometimes they dont idk why 
